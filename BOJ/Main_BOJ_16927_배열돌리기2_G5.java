@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class BOJ_16927_배열돌리기2_G5 {
+public class Main_BOJ_16927_배열돌리기2_G5 {
     static final int toRight = 1;
     static final int toDown = 2;
     static final int toLeft = 3;
