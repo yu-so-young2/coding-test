@@ -60,7 +60,6 @@ class Solution {
             } else { // 아니면 추가
                 set2.put(str, 1);
             }
-
             set.add(str);
         }
 
