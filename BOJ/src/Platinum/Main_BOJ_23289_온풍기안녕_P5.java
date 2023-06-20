@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main_23289_온풍기안녕_P5 {
+public class Main_BOJ_23289_온풍기안녕_P5 {
     public static class Node {
         int r, c, dir;
         public Node(int r, int c, int dir) {
