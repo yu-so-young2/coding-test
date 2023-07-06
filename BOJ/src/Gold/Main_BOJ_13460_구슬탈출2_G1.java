@@ -13,6 +13,7 @@ public class Main_BOJ_13460_구슬탈출2_G1 {
     static int Rx, Ry, Bx, By;
     static boolean possible;
     static Queue<int[][]> q; // Red, Blue 구슬 위치 저장
+    static boolean[][][][] visited;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -48,8 +49,10 @@ public class Main_BOJ_13460_구슬탈출2_G1 {
         int step = 1;
         q = new LinkedList<>();
         possible = false;
+        visited = new boolean[N][M][N][M];
 
         int[][] idx = {{Ry, Rx},{By, Bx}};
+        visited[Ry][Rx][By][Bx] = true;
         q.add(idx);
 
         bfs:
@@ -58,23 +61,19 @@ public class Main_BOJ_13460_구슬탈출2_G1 {
             for(int i = 0; i < size; i++) {
                 int[][] cur = q.poll();
 
-//                System.out.println("==== cur ====");
-//                for (int y = 0; y < N; y++) {
-//                    for (int x = 0; x < M; x++) {
-//                        System.out.print(cur[y][x]);
-//                    }
-//                    System.out.println();
-//                }
-
                 // 상하좌우 맵 만들기
-                up(cur);
-                if(possible) break bfs;
-                down(cur);
-                if(possible) break bfs;
-                left(cur);
-                if(possible) break bfs;
                 right(cur);
                 if(possible) break bfs;
+
+                up(cur);
+                if(possible) break bfs;
+
+                left(cur);
+                if(possible) break bfs;
+
+                down(cur);
+                if(possible) break bfs;
+
             }
 
             step++;
@@ -153,8 +152,11 @@ public class Main_BOJ_13460_구슬탈출2_G1 {
 
         if(redIn && !blueIn) possible = true; // 빨강만 구멍에 들어가면 성공
         else if(!redIn && !blueIn){ // 둘 다 구멍에 안들어가면 bfs 진행
-            int[][] newIdx = {{Ry,Rx},{By,Bx}};
-            q.add(newIdx);
+            if(!visited[Ry][Rx][By][Bx]) {
+                visited[Ry][Rx][By][Bx] = true;
+                int[][] newIdx = {{Ry,Rx},{By,Bx}};
+                q.add(newIdx);
+            }
         }
 
     }
@@ -221,8 +223,11 @@ public class Main_BOJ_13460_구슬탈출2_G1 {
 
         if(redIn && !blueIn) possible = true; // 빨강만 구멍에 들어가면 성공
         else if(!redIn && !blueIn){ // 둘 다 구멍에 안들어가면 bfs 진행
-            int[][] newIdx = {{Ry,Rx},{By,Bx}};
-            q.add(newIdx);
+            if(!visited[Ry][Rx][By][Bx]) {
+                visited[Ry][Rx][By][Bx] = true;
+                int[][] newIdx = {{Ry,Rx},{By,Bx}};
+                q.add(newIdx);
+            }
         }
     }
 
@@ -233,7 +238,7 @@ public class Main_BOJ_13460_구슬탈출2_G1 {
         int By = cur[1][0];
         int Bx = cur[1][1];
 
-        for (int i = 0; i < N; i++) { // 위로 올라가야 하니까 상->하, 좌->우로 탐색
+        for (int i = 0; i < N; i++) { // 왼쪽으로 가야 하니까 상->하, 좌->우로 탐색
             for (int j = 0; j < M; j++) {
                 if(i==Ry && j==Rx) { // Red 구슬이라면
                     int ny = i;
@@ -288,8 +293,11 @@ public class Main_BOJ_13460_구슬탈출2_G1 {
 
         if(redIn && !blueIn) possible = true; // 빨강만 구멍에 들어가면 성공
         else if(!redIn && !blueIn){ // 둘 다 구멍에 안들어가면 bfs 진행
-            int[][] newIdx = {{Ry,Rx},{By,Bx}};
-            q.add(newIdx);
+            if(!visited[Ry][Rx][By][Bx]) {
+                visited[Ry][Rx][By][Bx] = true;
+                int[][] newIdx = {{Ry,Rx},{By,Bx}};
+                q.add(newIdx);
+            }
         }
     }
     private static void right(int[][] cur) {
@@ -354,8 +362,11 @@ public class Main_BOJ_13460_구슬탈출2_G1 {
 
         if(redIn && !blueIn) possible = true; // 빨강만 구멍에 들어가면 성공
         else if(!redIn && !blueIn){ // 둘 다 구멍에 안들어가면 bfs 진행
-            int[][] newIdx = {{Ry,Rx},{By,Bx}};
-            q.add(newIdx);
+            if(!visited[Ry][Rx][By][Bx]) {
+                visited[Ry][Rx][By][Bx] = true;
+                int[][] newIdx = {{Ry,Rx},{By,Bx}};
+                q.add(newIdx);
+            }
         }
     }
 }
