@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 
-class Solution {
+class Solution_Programmers_KAKAO_뉴스클러스터링_L2 {
 
     public static HashMap<String, Integer> set1, set2;
     public static HashSet<String> set;
