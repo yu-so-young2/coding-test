@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Solution_Programmers_KAKAO_캐시 {
+public class Solution_Programmers_KAKAO_캐시_L2 {
     public static int solution(int cacheSize, String[] cities) {
         int answer = 0;
 
