@@ -1,4 +1,4 @@
-public class Solution_Programmers_KAKAO_코딩테스트공부 {
+public class Solution_Programmers_KAKAO_코딩테스트공부_L3 {
 	public static void main(String[] args) {
 		int alp = 21;
 		int cop = 10;
