@@ -16,7 +16,7 @@
  *
  */
 
-class Solution_Leetcode_55_JumpGame_Medium {
+public class Solution_Leetcode_55_JumpGame_Medium {
     public static void main(String[] args) {
 //        int[] nums = {2,3,1,1,4};
         int[] nums = {3,2,1,0,4};
