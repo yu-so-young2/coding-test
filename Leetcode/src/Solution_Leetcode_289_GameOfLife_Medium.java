@@ -1,3 +1,20 @@
+/**
+ * 1. 아이디어
+ * 방법1) 이중for문 돌면서 각 cell마다 8방탐색
+ * => O(N * M * 8),
+ * => 불필요한 8번의 연산 중복 발생
+ * 방법2) memoization!
+ * sum[i][j] = sum[i-1][j] + sum[i][j-1] - sum[i-1][j-1] + board[i][j];
+ * neighbors = sum[i+1][j+1] - sum[i-2][j+1] - sum[i+1][j-2] + sum[i-2][j-2] - current;
+ *
+ * 2. 자료구조
+ * int[][] sum : sum(i,j) = (i,j)까지의 직사각형의 누적합
+ * int neighbors = 해당 칸 주변의 1 개수
+ *
+ * 3. 시간복잡도
+ * O(N * M)
+ *
+ */
 
 public class Solution_Leetcode_289_GameOfLife_Medium {
     public static void main(String[] args) {
