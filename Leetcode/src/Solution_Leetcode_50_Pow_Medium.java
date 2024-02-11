@@ -20,7 +20,7 @@ public class Solution_Leetcode_50_Pow_Medium {
             double temp = myPow(x, n/2);
             if(Math.abs(n) % 2 == 0) {
                 return temp * temp;
-            } else {
+            } else { // 2^5 = 2^2 * 2^2 * 2
                 return temp * temp * x;
             }
         } else {

@@ -35,15 +35,15 @@ public class Solution_Leetcode_289_GameOfLife_Medium {
             }
         }
 
-//
-//        // sum[][] 확인
-//        for (int i = 0; i < board.length; i++) {
-//            for (int j = 0; j < board[0].length; j++) {
-//                System.out.print(sum[i][j]+" ");
-//            }
-//            System.out.println();
-//        }
-//        System.out.println();
+
+        // sum[][] 확인
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                System.out.print(sum[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println();
 
         // 2중 for문을 통해 각 칸마다의 다음 스텝 구하기
         for(int i = 0; i < board.length; i++) {
